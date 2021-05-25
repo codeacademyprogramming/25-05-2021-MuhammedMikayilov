@@ -24,7 +24,6 @@ function AddToCard({ setShowHover, item }) {
       >
         Sizes:{" "}
       </strong>
-
       <button
         type="submit"
         className="btn btn-success addToCards w-100"
