@@ -1,11 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { add_to_basket } from "../../../redux/actions/basketActions";
+import swal from "sweetalert";
 
 function AddToCard({ setShowHover, item }) {
   const dispatch = useDispatch();
   const addToBasket = () => {
     add_to_basket(dispatch, item);
+    swal({
+      icon: "success",
+    });
     setShowHover(false);
   };
 
@@ -20,7 +24,6 @@ function AddToCard({ setShowHover, item }) {
       >
         Sizes:{" "}
       </strong>
-
       <button
         type="submit"
         className="btn btn-success addToCards w-100"
