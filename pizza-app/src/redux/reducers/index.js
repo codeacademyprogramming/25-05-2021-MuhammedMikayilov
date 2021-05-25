@@ -4,8 +4,8 @@ import basketReducer from "./basketReducer";
 import pizzasReducer from "./pizzasReducer";
 
 const reducer = combineReducers({
-  basketReducer,
-  pizzasReducer,
+  basket: basketReducer,
+  pizzas: pizzasReducer,
 });
 
 export default reducer;

@@ -6,7 +6,6 @@ const basketReducer = (state = { basket: [] }, action) => {
       const isExist = state.basket.find(
         (item) => item.id === action.payload.id
       );
-
       return {
         ...state,
         basket: isExist
@@ -20,6 +19,11 @@ const basketReducer = (state = { basket: [] }, action) => {
                 : item
             )
           : [...state.basket, { ...action.payload, counter: 1 }],
+      };
+    case actionTypes.REMOVE_FROM_BASKET:
+      return {
+        state,
+        basket: state.basket.filter((item) => item !== action.payload),
       };
     default:
       return { ...state };

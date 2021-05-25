@@ -8,7 +8,7 @@ import PizzaItems from "../Pizza/PizzaItems";
 function Pizzas() {
   const pizzasSelector = (state) => {
     return {
-      pizzas: state,
+      pizzas: state.pizzas,
     };
   };
 
@@ -17,7 +17,7 @@ function Pizzas() {
   const dispatch = useDispatch();
   const pizzasList = useSelector(pizzasSelector);
 
-  const pizzaList = pizzasList.pizzas.pizzasReducer.pizzas;
+  const pizzaList = pizzasList.pizzas.pizzas;
 
   React.useEffect(() => {
     dispatch(getPizzasList());

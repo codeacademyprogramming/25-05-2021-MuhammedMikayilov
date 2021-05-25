@@ -4,7 +4,7 @@ import BasketItem from "./BasketItem";
 
 function Basket() {
   const basketSelected = (state) => {
-    return { basket: state.basketReducer.basket };
+    return { basket: state.basket.basket };
   };
   const itemSelected = useSelector(basketSelected);
   return (
@@ -15,7 +15,7 @@ function Basket() {
         </h2>
 
         {itemSelected?.basket?.map((item) => (
-          <BasketItem item={item} />
+          <BasketItem key={item.id} item={item} />
         ))}
       </div>
     </section>

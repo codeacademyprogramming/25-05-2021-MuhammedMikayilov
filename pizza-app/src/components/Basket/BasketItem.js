@@ -1,8 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { remove_from_basket } from "../../redux/actions/basketActions";
 
 function BasketItem({ item }) {
+  const dispatch = useDispatch();
+
+  const removeBasket = () => {
+    remove_from_basket(dispatch, item);
+  };
+
   return (
-    <div className="row basket-row">
+    <div className="row basket-row" style={{ position: "relative" }}>
       <div className="col-md-3">
         <img src={item.image} alt="" width="70" />
       </div>
@@ -16,6 +24,19 @@ function BasketItem({ item }) {
             <span>{item.topping.map((topping) => topping + ", ")}</span>
           </div>
           <strong className="price">{item.price}$</strong>
+        </div>
+
+        <div
+          onClick={removeBasket}
+          style={{
+            position: "absolute",
+            top: "-2%",
+            right: "20%",
+            color: "red",
+            cursor: "pointer",
+          }}
+        >
+          <i class="fas fa-trash" />
         </div>
       </div>
     </div>
