@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { remove_from_basket } from "../../redux/actions/basketActions";
 
-function BasketItem({ item }) {
+function BasketItem({ item, total }) {
   const dispatch = useDispatch();
 
   const removeBasket = () => {

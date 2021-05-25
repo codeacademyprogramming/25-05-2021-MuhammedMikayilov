@@ -7,6 +7,7 @@ function Basket() {
     return { basket: state.basket.basket };
   };
   const itemSelected = useSelector(basketSelected);
+
   return (
     <section id="basket">
       <div className="container">
