@@ -14,10 +14,14 @@ const basketReducer = (state = { basket: [] }, action) => {
                 ? {
                     ...item,
                     counter: item.counter + 1,
+                    result: (item.counter + 1) * item.price,
                   }
                 : item
             )
-          : [...state.basket, { ...action.payload, counter: 1 }],
+          : [
+              ...state.basket,
+              { ...action.payload, counter: 1, result: action.payload.price },
+            ],
       };
     case actionTypes.REMOVE_FROM_BASKET:
       return {

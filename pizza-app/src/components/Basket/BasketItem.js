@@ -23,7 +23,7 @@ function BasketItem({ item }) {
             <h5>{item.name}</h5>
             <span>{item.topping.map((topping) => topping + ", ")}</span>
           </div>
-          <strong className="price">{item.price}$</strong>
+          <strong className="price">{item.result}$</strong>
         </div>
 
         <div
