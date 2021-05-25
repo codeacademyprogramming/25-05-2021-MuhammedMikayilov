@@ -7,11 +7,10 @@ function PizzaItems({ item }) {
   return (
     <Col md="3" className="mt-5">
       <Card className="card" style={{ width: "18rem" }}>
-        <img src={item.image} alt="sdsd" />
+        <img src={item.image} alt="pizza" />
         <div className="card-body">
           <div className="card-title d-flex justify-content-between">
             <h5>{item.name}</h5>
-            <span>32cm</span>
           </div>
           <p className="card-text">
             {item.topping
@@ -21,7 +20,7 @@ function PizzaItems({ item }) {
           <div className="card-span">{item.price}$</div>
           <div className="button">
             <button className=" btn-success" onClick={() => setShowHover(true)}>
-              <i className="fas fa-shopping-bag"></i>
+              <i className="fas fa-shopping-bag" />
             </button>
           </div>
         </div>

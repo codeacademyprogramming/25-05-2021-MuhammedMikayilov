@@ -36,7 +36,7 @@ function BasketItem({ item }) {
             cursor: "pointer",
           }}
         >
-          <i class="fas fa-trash" />
+          <i className="fas fa-trash" />
         </div>
       </div>
     </div>

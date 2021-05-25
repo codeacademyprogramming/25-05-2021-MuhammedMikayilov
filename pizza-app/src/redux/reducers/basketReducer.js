@@ -10,11 +10,10 @@ const basketReducer = (state = { basket: [] }, action) => {
         ...state,
         basket: isExist
           ? state.basket.map((item) =>
-              item.id === isExist.id
+              item.id === action.payload.id
                 ? {
-                    ...action.payload,
-                    counter: (action.payload.counter =
-                      action.payload.counter + 1),
+                    ...item,
+                    counter: item.counter + 1,
                   }
                 : item
             )

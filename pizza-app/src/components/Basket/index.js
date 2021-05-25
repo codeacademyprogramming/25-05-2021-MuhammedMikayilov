@@ -10,9 +10,7 @@ function Basket() {
   return (
     <section id="basket">
       <div className="container">
-        <h2 onClick={() => console.log("itemSelected: ", itemSelected)}>
-          Your Cart
-        </h2>
+        <h2>Your Cart</h2>
 
         {itemSelected?.basket?.map((item) => (
           <BasketItem key={item.id} item={item} />
