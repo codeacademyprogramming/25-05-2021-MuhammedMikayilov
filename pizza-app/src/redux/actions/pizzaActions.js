@@ -35,6 +35,7 @@ export const putPizzas = (id, body, push) => (dispatch) => {
       });
     })
     .then(() => swal("Successful", "Update Pizza", "success"))
+    .then(() => dispatch(getPizzasList()))
     .then(() => push("/dashboard"))
     .catch((err) => console.log(err));
 };

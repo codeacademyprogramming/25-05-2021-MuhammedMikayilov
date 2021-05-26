@@ -7,7 +7,7 @@ function PizzaItems({ item }) {
   return (
     <Col md="3" className="mt-5">
       <Card className="card" style={{ width: "18rem" }}>
-        <img src={item.image} alt="pizza" />
+        <img src={item.img} alt="pizza" />
         <div className="card-body">
           <div className="card-title d-flex justify-content-between">
             <h5>{item.name}</h5>

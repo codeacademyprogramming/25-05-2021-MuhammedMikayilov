@@ -11,7 +11,11 @@ import {
   Label,
   Row,
 } from "reactstrap";
-import { postPizzas, putPizzas } from "../../../../redux/actions/pizzaActions";
+import {
+  getPizzasList,
+  postPizzas,
+  putPizzas,
+} from "../../../../redux/actions/pizzaActions";
 
 function CreateOrUpdate() {
   const [photo, setPhoto] = React.useState();
