@@ -24,20 +24,33 @@ function AdminPanel() {
     });
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem("my-pizza-app");
+    push("/login");
+  };
+
   React.useEffect(() => {
     dispatch(getPizzasList());
   }, [dispatch]);
   return (
     <Container>
       <Row className="mt-5">
-        <Col sm="10" className="offset-md-1">
+        <Col sm="10" className="offset-md-1" style={{ position: "relative" }}>
           <Link to="/" className="btn btn-info me-2">
             Back To Main
           </Link>
           <Link to="/create_new_pizza" className="btn btn-success">
             Create
           </Link>
-          <Table dark>
+
+          <button
+            className="btn btn-danger"
+            style={{ position: "absolute", right: "15px" }}
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+          <Table dark className="mt-3">
             <thead>
               <tr>
                 <th>#</th>
