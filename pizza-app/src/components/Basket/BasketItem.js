@@ -21,7 +21,7 @@ function BasketItem({ item, total }) {
         <div className="content-basket d-flex justify-content-between">
           <div className="info">
             <h5>{item.name}</h5>
-            <span>{item.topping.map((topping) => topping + ", ")}</span>
+            <span>{item.topping}</span>
           </div>
           <strong className="price">{item.result}$</strong>
         </div>

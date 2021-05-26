@@ -12,11 +12,7 @@ function PizzaItems({ item }) {
           <div className="card-title d-flex justify-content-between">
             <h5>{item.name}</h5>
           </div>
-          <p className="card-text">
-            {item.topping
-              ? item.topping.map((topping) => topping + ", ")
-              : "Resept tapilmadi"}
-          </p>
+          <p className="card-text">{item.topping}</p>
           <div className="card-span">{item.price}$</div>
           <div className="button">
             <button className=" btn-success" onClick={() => setShowHover(true)}>

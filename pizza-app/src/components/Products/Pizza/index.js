@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import { getPizzasList } from "../../../redux/actions/pizzaActions";
 import Basket from "../../Basket";
@@ -17,7 +18,7 @@ function Pizzas() {
   const dispatch = useDispatch();
   const pizzasList = useSelector(pizzasSelector);
 
-  const pizzaList = pizzasList.pizzas.pizzas;
+  const { pizzas } = pizzasList.pizzas;
 
   React.useEffect(() => {
     dispatch(getPizzasList());
@@ -29,6 +30,9 @@ function Pizzas() {
           <Col>
             <div className="title">
               <h1>Popular dishes</h1>
+              <Link to="/dashboard" className="btn btn-info">
+                Go to Admin Panel For CRUD{" "}
+              </Link>
               <div
                 onClick={() => {
                   setBasket(!isOpenBasket);
@@ -42,7 +46,7 @@ function Pizzas() {
           </Col>
         </Row>
         <Row>
-          {pizzaList?.map((item) => (
+          {pizzas?.map((item) => (
             <PizzaItems key={item.id} item={item} />
           ))}
         </Row>
