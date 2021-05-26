@@ -50,6 +50,7 @@ export const deletePizzas = (id) => (dispatch) => {
       });
     })
     .then(() => swal("Successful", "Deleted Pizza", "success"))
+    .then(() => dispatch(getPizzasList()))
     .catch((err) => console.log(err));
 };
 
